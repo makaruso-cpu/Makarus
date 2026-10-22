@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#09172a" />
+  <meta name="description" content="Bearing Atlas — поиск подшипников по обозначению и размерам. Демонстрационная версия." />
+  <title>Bearing Atlas — каталог подшипников</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell top-inner">
+      <a class="brand" href="#top" aria-label="Bearing Atlas, главная"><span class="brand-icon" aria-hidden="true">◎</span><span>BEARING<span class="brand-light"> ATLAS</span><small>Технический каталог</small></span></a>
+      <nav aria-label="Основная навигация"><a class="navlink" href="#catalog">Каталог</a><a class="navlink" href="#features">Возможности</a><a class="navlink" href="#tariffs">Тарифы</a></nav>
+      <span class="demo-pill">DEMO VERSION</span>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> Цифровой инженерный справочник</div>
+        <h1 id="hero-title">Находите нужный<br /><em>подшипник быстрее.</em></h1>
+        <p>Поиск по обозначению, внутреннему и наружному диаметру, ширине и типу. Единый интерфейс для технического подбора.</p>
+        <a class="primary-button" href="#catalog">Перейти к поиску <span aria-hidden="true">↗</span></a>
+        <p class="hero-note">Тестовая версия: записи учебные, не предназначены для инженерного выбора без проверки.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-grid"></div>
+        <div class="bearing"><div class="bearing-ring"><div class="bearing-inside"></div><span class="ball b1"></span><span class="ball b2"></span><span class="ball b3"></span><span class="ball b4"></span><span class="ball b5"></span><span class="ball b6"></span><span class="ball b7"></span><span class="ball b8"></span></div></div>
+        <span class="measure m1">Ø D</span><span class="measure m2">Ø d</span><span class="measure m3">B</span>
+      </div>
+    </section>
+    <section class="stats-bar"><div class="shell stats"><div><b>6</b><span>демонстрационных позиций</span></div><div><b>3</b><span>параметра размеров</span></div><div><b>FREE / PRO</b><span>проект тарифов</span></div></div></section>
+    <section id="catalog" class="shell catalog-section" aria-labelledby="catalog-title">
+      <div class="section-head"><div><div class="overline">ПОИСК И ПОДБОР</div><h2 id="catalog-title">Каталог подшипников</h2><p>Введите обозначение или укажите размеры для отбора записей.</p></div><span class="section-counter" id="count">6 позиций</span></div>
+      <div class="search-panel">
+        <label class="field search-field"><span>Обозначение</span><input type="search" id="query" placeholder="Например, 6205" autocomplete="off" /></label>
+        <label class="field"><span>d — внутренний, мм</span><input type="number" min="1" id="inner" placeholder="Любой" /></label>
+        <label class="field"><span>D — наружный, мм</span><input type="number" min="1" id="outer" placeholder="Любой" /></label>
+        <label class="field"><span>B — ширина, мм</span><input type="number" min="1" id="width" placeholder="Любая" /></label>
+        <button class="clear-button" id="clear" type="button">Сбросить</button>
+      </div>
+      <div class="results-bar"><strong id="results-label">Результаты поиска</strong><span>Данные для демонстрации интерфейса</span></div>
+      <div id="results" class="results" aria-live="polite"></div>
+      <p class="notice"><strong>Внимание:</strong> в тестовой версии указаны примеры типоразмеров. Производители, допуски, нагрузки, обороты, аналоги и соответствие конкретному оборудованию не подтверждены. Не используйте эти записи как основание для закупки или монтажа.</p>
+    </section>
+    <section id="features" class="feature-wrap"><div class="shell"><div class="overline">ВОЗМОЖНОСТИ</div><h2>Инструменты для работы</h2><div class="feature-grid"><article class="feature"><span class="feature-icon">⌕</span><h3>Поиск по размерам</h3><p>Фильтруйте каталог по d, D и B, а также по обозначению.</p></article><article class="feature"><span class="feature-icon">▤</span><h3>Карточки подшипников</h3><p>Базовые параметры и формирование текста заявки.</p></article><article class="feature"><span class="feature-icon">◇</span><h3>Избранное</h3><p>Сохраняйте позиции в браузере на этом устройстве.</p></article><article class="feature"><span class="feature-icon">🔒</span><h3>Расшифровка PRO</h3><p>Расшифровка префиксов и суффиксов будет доступна только по платной подписке.</p></article></div></div></section>
+    <section id="tariffs" class="shell tariffs"><div class="overline">ТАРИФЫ</div><h2>Для разных задач</h2><p class="tariff-intro">Ниже — согласованное разделение возможностей. Оплата и вход в аккаунт ещё не подключены.</p><div class="tariff-grid"><div class="tariff"><span class="tariff-name">FREE</span><h3>Базовый поиск</h3><p>Поиск по обозначению и размерам, просмотр открытых карточек.</p><span class="tariff-status">Доступно в демоверсии</span></div><div class="tariff pro"><span class="tariff-name">PRO</span><h3>Расширенные функции</h3><p>Расшифровка обозначений, подтверждённые аналоги и дополнительные инструменты после реализации.</p><span class="tariff-status">Запланировано · не активировано</span></div></div></section>
+  </main>
+  <footer><div class="shell footer-inner"><span>◎ BEARING ATLAS</span><span>Демонстрационная версия · Не является инженерным справочником</span></div></footer>
+  <dialog id="detail-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span class="overline">КАРТОЧКА ПОДШИПНИКА</span><button id="close-dialog" class="icon-button" aria-label="Закрыть" type="button">×</button></div><div id="dialog-body"></div></dialog>
+  <dialog id="pro-dialog" aria-labelledby="pro-title"><div class="dialog-top"><span class="overline">ФУНКЦИИ PRO</span><button id="close-pro" class="icon-button" aria-label="Закрыть" type="button">×</button></div><h2 id="pro-title">Доступно в PRO</h2><p>Расшифровка обозначений полностью исключена из FREE. В тестовой версии подписка и сама расшифровка ещё не работают.</p><button class="primary-button" id="understood" type="button">Понятно</button></dialog>
+</body>
+</html>
